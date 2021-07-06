@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:noteapp/auth/login.dart';
 import 'package:noteapp/auth/signup.dart';
+import 'package:noteapp/home/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(backgroundColor: Colors.red),
+          primaryColor: Colors.blue,
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(primary: Colors.blue),
           ),
+          buttonColor: Colors.blue,
           textTheme: TextTheme(
               headline6: TextStyle(
             fontSize: 17,
@@ -24,6 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "login": (context) => Login(),
         "signup": (context) => SignUp(),
+        "homepage": (context) => HomePage(),
       },
     );
   }
