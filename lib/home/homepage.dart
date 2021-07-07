@@ -30,7 +30,9 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).buttonColor,
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed("addnotes");
+        },
       ),
       appBar: AppBar(
         title: Text('Home Page'),
@@ -41,6 +43,9 @@ class _HomePageState extends State<HomePage> {
           itemCount: notes.length,
           itemBuilder: (BuildContext context, int index) {
             return Dismissible(
+              background: Container(
+                color: Colors.red,
+              ),
               key: Key("$index"),
               child: ListNotes(notes: notes[index]),
             );
@@ -72,7 +77,8 @@ class ListNotes extends StatelessWidget {
           Expanded(
             flex: 2,
             child: ListTile(
-              title: Text("${notes['note']}"),
+              title: Text("Title"),
+              subtitle: Text("${notes['note']}"),
               trailing: IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.edit),

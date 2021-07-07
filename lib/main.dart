@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:noteapp/C,R,U,D/addnotes.dart';
 import 'package:noteapp/auth/login.dart';
 import 'package:noteapp/auth/signup.dart';
 import 'package:noteapp/home/homepage.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
               FloatingActionButtonThemeData(backgroundColor: Colors.red),
           primaryColor: Colors.blue,
           elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(primary: Colors.blue),
+
+            style: ElevatedButton.styleFrom(primary: Colors.blue ),
           ),
           buttonColor: Colors.blue,
           textTheme: TextTheme(
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
         "login": (context) => Login(),
         "signup": (context) => SignUp(),
         "homepage": (context) => HomePage(),
+        "addnotes" : (context)=> AddNotes(),
       },
     );
   }
