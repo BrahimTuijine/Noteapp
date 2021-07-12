@@ -21,7 +21,6 @@ class _AddNotesState extends State<AddNotes> {
               children: [
                 Form(
                     child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextFormField(
                       maxLength: 30,
