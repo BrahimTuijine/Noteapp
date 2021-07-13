@@ -18,8 +18,12 @@ class MyApp extends StatelessWidget {
               FloatingActionButtonThemeData(backgroundColor: Colors.red),
           primaryColor: Colors.blue,
           elevatedButtonTheme: ElevatedButtonThemeData(
-
-            style: ElevatedButton.styleFrom(primary: Colors.blue ),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.blue,
+              shape: (RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              )),
+            ),
           ),
           buttonColor: Colors.blue,
           textTheme: TextTheme(
@@ -32,7 +36,7 @@ class MyApp extends StatelessWidget {
         "login": (context) => Login(),
         "signup": (context) => SignUp(),
         "homepage": (context) => HomePage(),
-        "addnotes" : (context)=> AddNotes(),
+        "addnotes": (context) => AddNotes(),
       },
     );
   }
