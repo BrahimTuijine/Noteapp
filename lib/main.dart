@@ -1,10 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:noteapp/C,R,U,D/addnotes.dart';
 import 'package:noteapp/auth/login.dart';
 import 'package:noteapp/auth/signup.dart';
 import 'package:noteapp/home/homepage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
