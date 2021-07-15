@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          floatingActionButtonTheme:
-              FloatingActionButtonThemeData(backgroundColor: Colors.red),
+          buttonColor: Colors.blue,
           primaryColor: Colors.blue,
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
@@ -28,13 +27,12 @@ class MyApp extends StatelessWidget {
               )),
             ),
           ),
-          buttonColor: Colors.blue,
           textTheme: TextTheme(
               headline6: TextStyle(
             fontSize: 17,
             color: Colors.white,
           ))),
-      home: Login(),
+      home: SignUp(),
       routes: {
         "login": (context) => Login(),
         "signup": (context) => SignUp(),
