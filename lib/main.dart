@@ -25,14 +25,14 @@ class MyApp extends StatelessWidget {
               shape: (RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               )),
-            ),
+            ),  
           ),
           textTheme: TextTheme(
               headline6: TextStyle(
             fontSize: 17,
             color: Colors.white,
           ))),
-      home: SignUp(),
+      home: Login(),
       routes: {
         "login": (context) => Login(),
         "signup": (context) => SignUp(),
