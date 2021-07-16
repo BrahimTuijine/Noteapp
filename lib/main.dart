@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:noteapp/C,R,U,D/addnotes.dart';
@@ -5,9 +6,17 @@ import 'package:noteapp/auth/login.dart';
 import 'package:noteapp/auth/signup.dart';
 import 'package:noteapp/home/homepage.dart';
 
+bool? isLogin;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  var userstate = FirebaseAuth.instance.currentUser;
+  if (userstate == null) {
+    isLogin = false;
+  } else {
+    isLogin = true;
+  }
   runApp(MyApp());
 }
 
@@ -25,14 +34,14 @@ class MyApp extends StatelessWidget {
               shape: (RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               )),
-            ),  
+            ),
           ),
           textTheme: TextTheme(
               headline6: TextStyle(
             fontSize: 17,
             color: Colors.white,
           ))),
-      home: Login(),
+      home: isLogin == true ? HomePage() : Login(),
       routes: {
         "login": (context) => Login(),
         "signup": (context) => SignUp(),
