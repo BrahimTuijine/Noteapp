@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,15 +48,15 @@ class _HomePageState extends State<HomePage> {
                   context: context,
                   dialogType: DialogType.INFO,
                   animType: AnimType.BOTTOMSLIDE,
-                  
                   desc: 'Are you sure to LogOut',
                   btnCancelOnPress: () {},
-                  btnOkOnPress: () {
+                  btnOkOnPress: () async {
+                    await FirebaseAuth.instance.signOut();
                     Navigator.of(context).pushReplacementNamed("login");
                   },
                 )..show();
               },
-              child: Icon(Icons.logout),
+              child: Icon(Icons.exit_to_app),
             ),
           ),
         ],
