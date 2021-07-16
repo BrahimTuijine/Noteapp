@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             fontSize: 17,
             color: Colors.white,
           ))),
-      home: Login(),
+      home: HomePage(),
       routes: {
         "login": (context) => Login(),
         "signup": (context) => SignUp(),

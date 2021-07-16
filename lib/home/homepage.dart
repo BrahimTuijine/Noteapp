@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,6 +38,27 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home Page'),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {
+                AwesomeDialog(
+                  context: context,
+                  dialogType: DialogType.INFO,
+                  animType: AnimType.BOTTOMSLIDE,
+                  
+                  desc: 'Are you sure to LogOut',
+                  btnCancelOnPress: () {},
+                  btnOkOnPress: () {
+                    Navigator.of(context).pushReplacementNamed("login");
+                  },
+                )..show();
+              },
+              child: Icon(Icons.logout),
+            ),
+          ),
+        ],
       ),
       body: Container(
         child: ListView.builder(
