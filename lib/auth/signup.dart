@@ -166,6 +166,8 @@ class _SignUpState extends State<SignUp> {
 
                           if (respense != null ) {
                             Navigator.of(context).pushReplacementNamed("homepage");
+                          }else{
+                            print("not valid ");
                           }
                         },
                         child: Text(
