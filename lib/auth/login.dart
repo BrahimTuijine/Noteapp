@@ -23,7 +23,7 @@ class _LoginState extends State<Login> {
         if (e.code == 'user-not-found') {
           AwesomeDialog(
             context: context,
-            dialogType: DialogType.INFO,
+            dialogType: DialogType.ERROR,
             animType: AnimType.BOTTOMSLIDE,
             title: 'ERROR',
             desc: 'No user found for that email.',
